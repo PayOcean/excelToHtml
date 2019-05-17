@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>导入表格生成html</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+  <ul id="myohmy">
+    <li id="eatcrab">
+      <h5 class="text-primary my-1"><span style="margin-right:0.2rem">•</span>财务接口人</h5>
+      <div class="ml-3 table-responsive">
+        <table style="width:100%">
+          <tbody>
+            <!-- put cells -->
+          </tbody>
+        </table>
+      </div>
+    </li>
+  </ul>
+
+  <div id="inputWrapper">
+    <!-- 切换合并方式 -->
+    <div id="changeArea">
+      <p><label for="horizontalMerge">单元格水平方向:</label>
+        <select id="horizontalMerge">
+          <option value="不合并">不合并</option>
+          <option value="合并">合并</option>
+        </select>
+      </p>
+      <p>
+        <label for="verticalMerge">单元格垂直方向:</label>
+        <select id="verticalMerge">
+          <option value="不合并">不合并</option>
+          <option value="合并">合并</option>
+        </select>
+      </p>
+      <!-- 导入表格数据的按钮 -->
+      <p>
+        当前文件：
+        <span id="currentFile"><span class="gray">请导入Excel表格</span></span>
+        <input type="file" onchange="importExcel(this,false,importSuccessCallback)" id="uploadFile" />
+      </p>
+    </div>
+    <!-- 复制指定区域(data-clipboard-target)按钮 -->
+    <div id="copyArea">
+      <input id="copyboard" style="opacity:0;">
+      <div id="copyBtn" data-clipboard-target="#copyboard">点击复制</div>
+    </div>
+  </div>
+
+  <script src="js/jquery-1.7.2.min.js"></script>
+  <!-- 复制页面的插件 -->
+  <script src="js/clipboard.min.js"></script>
+  <!-- 表格数据转json插件 -->
+  <script src="js/xlsx.full.min.js"></script>
+  <!-- 表格数据转json -->
+  <script src="js/importExcel.js"></script>
+  <!-- 页面渲染 -->
+  <script src="js/excel2html.js"></script>
+</body>
+
+</html>
